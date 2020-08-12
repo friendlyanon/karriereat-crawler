@@ -2,7 +2,8 @@
 // @name        karriere.at crawler
 // @namespace   friendlyanon
 // @match       https://www.karriere.at/*
-// @version     1
+// @version     2
+// @grant       GM_addStyle
 // @grant       GM_setValue
 // @grant       GM_getValue
 // @grant       GM_xmlhttpRequest
@@ -11,6 +12,11 @@
 // ==/UserScript==
 
 "use strict";
+
+GM_addStyle(`
+.m-jobsListItem__titleLink { background-color: rgba(255, 255, 255, 0.5); }
+.m-jobsListItem__titleLink:visited { background-color: rgba(255, 0, 0, 0.5); }
+`);
 
 class MenuItem {
   constructor(label, prompt, key, defaultValue) {
